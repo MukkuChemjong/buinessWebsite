@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+}
+
+/*Header Section*/
+#navigation{
+    width: 100%;
+    background-color: #f4d6b0;
+}
+
+#nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nav-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    color: #45354E;
+}
+
+#social-image{
+    width: 30px;
+    height: 30px;
+}
+
+#socials-container{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+/*Product Section*/
+#products-container{
+    display: grid;
+    grid-template-columns: 375px 375px 375px 375px;
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#product-detail-container{
+    width: 375px;
+}
+
+#product-image{
+    width: 375px;
+    height: 253px;
+}
+
+#product-discription{
+    text-align: center;
+}
+
+#social-image{
+    width: 30px;
+    height: 30px;
+}
+
+#socials-container{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+/*Business Information Section*/
+#business-info{
+    background-color: #29110e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#business-info-container{
+    color: #e6d4c0;
+}
