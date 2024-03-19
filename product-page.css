@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+}
+
+/*Header section*/
+#navigation{
+    width: 100%;
+    background-color: #f4d6b0;
+}
+
+#nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nav-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+a{
+    text-decoration: none;
+    color: #2a110c;
+}
+
+#social-image{
+    width: 30px;
+    height: 30px;
+}
+
+#socials-container{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-right: -275px;
+}
+
+/*Gallery Section*/
+#main-section{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1300px;
+    height: 800px;
+}
+
+#gallery-section{
+    width: 100px;
+}
+
+#gallery-section:hover{
+    cursor: pointer;
+}
+
+#gallery-image1, #gallery-image2, #gallery-image3{
+    width: 100px;
+    height: 100px;
+}
+
+#gallery-image:hover{
+    cursor: pointer;
+}
+
+#arrow-image-back{
+    position: absolute;
+    top: 463px;
+    left: 403px;
+    width: 100px;
+}
+
+#arrow-image-forward{
+    position: absolute;
+    top: 463px;
+    left: 1003px;
+    width: 100px;
+}
+
+#arrow-image{
+    width:inherit;
+    height: inherit;
+}
+
+#arrow-image:hover{
+    cursor: pointer;
+}
+
+#main-image-container{
+    width: 700px;
+    height: 700px;
+}
+
+#main-image-container img{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 204px;
+    left: 403px;
+    display: none;
+}
+
+#main-image-container img.active {
+    display: block;
+}
+
+#main-image-container img:first-child{
+    display: block;
+}
+
+
+/*Review Section*/
+.star{
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.star:hover, .start:active{
+    color: gold;
+}
