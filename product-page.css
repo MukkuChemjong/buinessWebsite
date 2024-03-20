@@ -115,6 +115,6 @@ a{
     cursor: pointer;
 }
 
-.star:hover, .start:active{
+.star:hover, .star.active{
     color: gold;
 }
