@@ -55,19 +55,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const rating = document.querySelectorAll('.star.active').length;
     const reviewTextValue = reviewText.value;
 
-    console.log('Rating: ' ,rating, 'reviewText: ', reviewTextValue.value)
-    if(rating && reviewTextValue > 0){
+    if(rating > 0 && reviewTextValue != ''){
       const newReview = document.createElement('div');
       newReview.classList.add('review');
+
       newReview.innerHTML = `
-        <div class="stars">${'&#9733;'.repeat(rating)}</div>
+        <div class="review-star">${'&#9733;'.repeat(rating) + '&#9734;'.repeat(5-rating)}</div>
         <div class="review-text">${reviewTextValue}</div>
       `
       reviewsContainer.appendChild(newReview);
-
-      stars.forEach(function(star){
-        star.classList.remove('active');
-      });
 
       reviewTextValue.value = '';
     } else {
