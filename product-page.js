@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const images = document.querySelectorAll('.main-image-container img');
   let currentIndex = 0;
 
+  /*Gallery Section*/
+
   document.getElementById('arrow-image-forward').addEventListener('click', function(){
     images[currentIndex].classList.remove('active');
     currentIndex = (currentIndex + 1) % images.length;
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     images[currentIndex].classList.add('active');
   })
 
+  /*Review Section*/
   const stars = document.querySelectorAll('.star');
   const reviewText = document.getElementById('review-text');
   const reviewsContainer = document.querySelector('.reviews');
@@ -48,27 +51,147 @@ document.addEventListener('DOMContentLoaded', function() {
       for(let i=0;i<starDataValue; i++){
         stars[i].classList.add('active');
       }
-    });
-  });
+    })
+  })
+
+  let totalReviews = 4;
+
+  let progress1 = document.getElementById('1bar');
+  let percent1 = document.getElementById('percent1');
+  let progress1Count = 0;
+
+  let progress2 = document.getElementById('2bar');
+  let percent2 = document.getElementById('percent2');
+  let progress2Count = 0;
+
+  let progress3 = document.getElementById('3bar');
+  let percent3 = document.getElementById('percent3');
+  let progress3Count = 0;
+
+  let progress4 = document.getElementById('4bar');
+  let percent4 = document.getElementById('percent4');
+  let progress4Count = 2;
+
+  let progress5 = document.getElementById('5bar');
+  let percent5 = document.getElementById('percent5');
+  let progress5Count = 2;
 
   submitReviewButton.addEventListener('click', function() {
     const rating = document.querySelectorAll('.star.active').length;
     const reviewTextValue = reviewText.value;
+    const starActive = 5-rating;
 
+    console.log(starActive);
     if(rating > 0 && reviewTextValue != ''){
       const newReview = document.createElement('div');
       newReview.classList.add('review');
 
       newReview.innerHTML = `
-        <div class="review-star">${'&#9733;'.repeat(rating) + '&#9734;'.repeat(5-rating)}</div>
-        <div class="review-text">${reviewTextValue}</div>
+        <div class="rating"> <span class='star-active'>${'&#9733;'.repeat(rating)}</span> <span class='review-star'>${'&#9733;'.repeat(starActive)}</span> </div>
+        <div class="text">${reviewTextValue}</div>
       `
       reviewsContainer.appendChild(newReview);
 
       reviewTextValue.value = '';
+      
+      if(rating === 1){
+        totalReviews++;
+        progress1Count++;
+
+        progress1.value = (progress1Count/totalReviews) * 100;
+        progress2.value = (progress2Count/totalReviews) * 100;
+        progress3.value = (progress3Count/totalReviews) * 100;
+        progress4.value = (progress4Count/totalReviews) * 100;
+        progress5.value = (progress5Count/totalReviews) * 100;
+
+        percent1.innerHTML = `${Math.round((progress1Count/totalReviews) * 100)}%`;
+        percent2.innerHTML = `${Math.round((progress2Count/totalReviews) * 100)}%`;
+        percent3.innerHTML = `${Math.round((progress3Count/totalReviews) * 100)}%`;
+        percent4.innerHTML = `${Math.round((progress4Count/totalReviews) * 100)}%`;
+        percent5.innerHTML = `${Math.round((progress5Count/totalReviews) * 100)}%`;
+      } else if(rating === 2){
+        totalReviews++;
+        progress2Count++;
+
+        progress1.value = (progress1Count/totalReviews) * 100;
+        progress2.value = (progress2Count/totalReviews) * 100;
+        progress3.value = (progress3Count/totalReviews) * 100;
+        progress4.value = (progress4Count/totalReviews) * 100;
+        progress5.value = (progress5Count/totalReviews) * 100;
+
+        percent1.innerHTML = `${Math.round((progress1Count/totalReviews) * 100)}%`;
+        percent2.innerHTML = `${Math.round((progress2Count/totalReviews) * 100)}%`;
+        percent3.innerHTML = `${Math.round((progress3Count/totalReviews) * 100)}%`;
+        percent4.innerHTML = `${Math.round((progress4Count/totalReviews) * 100)}%`;
+        percent5.innerHTML = `${Math.round((progress5Count/totalReviews) * 100)}%`;
+      } else if(rating === 3){
+        totalReviews++;
+        progress3Count++;
+
+        progress1.value = (progress1Count/totalReviews) * 100;
+        progress2.value = (progress2Count/totalReviews) * 100;
+        progress3.value = (progress3Count/totalReviews) * 100;
+        progress4.value = (progress4Count/totalReviews) * 100;
+        progress5.value = (progress5Count/totalReviews) * 100;
+
+        percent1.innerHTML = `${Math.round((progress1Count/totalReviews) * 100)}%`;
+        percent2.innerHTML = `${Math.round((progress2Count/totalReviews) * 100)}%`;
+        percent3.innerHTML = `${Math.round((progress3Count/totalReviews) * 100)}%`;
+        percent4.innerHTML = `${Math.round((progress4Count/totalReviews) * 100)}%`;
+        percent5.innerHTML = `${Math.round((progress5Count/totalReviews) * 100)}%`;
+      }else if(rating === 4){
+        totalReviews++;
+        progress4Count++;
+
+        progress1.value = (progress1Count/totalReviews) * 100;
+        progress2.value = (progress2Count/totalReviews) * 100;
+        progress3.value = (progress3Count/totalReviews) * 100;
+        progress4.value = (progress4Count/totalReviews) * 100;
+        progress5.value = (progress5Count/totalReviews) * 100;
+
+        percent1.innerHTML = `${Math.round((progress1Count/totalReviews) * 100)}%`;
+        percent2.innerHTML = `${Math.round((progress2Count/totalReviews) * 100)}%`;
+        percent3.innerHTML = `${Math.round((progress3Count/totalReviews) * 100)}%`;
+        percent4.innerHTML = `${Math.round((progress4Count/totalReviews) * 100)}%`;
+        percent5.innerHTML = `${Math.round((progress5Count/totalReviews) * 100)}%`;
+      }else if(rating === 5){
+        totalReviews++;
+        progress5Count++;
+
+        progress1.value = (progress1Count/totalReviews) * 100;
+        progress2.value = (progress2Count/totalReviews) * 100;
+        progress3.value = (progress3Count/totalReviews) * 100;
+        progress4.value = (progress4Count/totalReviews) * 100;
+        progress5.value = (progress5Count/totalReviews) * 100;
+
+        percent1.innerHTML = `${Math.round((progress1Count/totalReviews) * 100)}%`;
+        percent2.innerHTML = `${Math.round((progress2Count/totalReviews) * 100)}%`;
+        percent3.innerHTML = `${Math.round((progress3Count/totalReviews) * 100)}%`;
+        percent4.innerHTML = `${Math.round((progress4Count/totalReviews) * 100)}%`;
+        percent5.innerHTML = `${Math.round((progress5Count/totalReviews) * 100)}%`;
+      }
     } else {
       alert('Please enter a valid rating and review.')
     }
   })
 })
-  
+
+  /*Cart*/
+function addToCart(){
+  const productImageUrl = 'images/coffee/americano.jpg'
+  const productName = document.getElementById('product-name').innerText;
+  const productPrice = 2;
+  const productQuantity = parseInt(document.getElementById('quantity').value);
+
+  const item = {
+    imageUrl: productImageUrl,
+    name: productName,
+    price: productPrice,
+    quantity: productQuantity
+  }
+
+  let cartItems = localStorage.getItem('cartItems');
+  cartItems = cartItems ? JSON.parse(cartItems) : [];
+  cartItems.push(item);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
