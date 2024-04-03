@@ -71,6 +71,7 @@ a{
 }
 
 .total-section{
+    width: 1051px;
     text-align: right;
 }
 
@@ -79,7 +80,7 @@ a{
     justify-content: space-between;
     text-align: center;
     width: 400px;
-    margin-left: 797px;
+    margin-left: 652px;
 }
 
 .checkout{

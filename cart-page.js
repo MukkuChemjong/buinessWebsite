@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageContainer = document.querySelector('.image-container');
     const productsContainer = document.querySelector('.products-container');
     const productinfoContainer = document.querySelector('.productinfo-container');
+    const subTotal = document.querySelector('.subtotal');
+    let total = 0;
     
     cartItems.forEach(function(cartItem) {
         const productInfoDiv = document.createElement('div');
@@ -74,7 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function updatePrice(){
             price.innerText = '$' + (cartItem.quantity * cartItem.price).toFixed(2);
-        }
+            cartItems.forEach(function(product) {
+                total += '$' + (product.quantity * product.price).toFixed(2);
+            });
+            subTotal.innerText = ' ';
+            subTotal.innerText = total;
+        };
     });
 
     
